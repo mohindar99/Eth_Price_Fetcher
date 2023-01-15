@@ -40,10 +40,20 @@
     "@nomiclabs/hardhat-ethers": "^2.2.2",
     "@nomiclabs/hardhat-etherscan": "^3.1.5",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
     "chai": "^4.3.7",
+    "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.3",
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.7.2",
-    "hardhat": "^2.12.6"
+    "hardhat": "^2.12.6",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.0"
   }
 }

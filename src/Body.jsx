@@ -1,17 +1,16 @@
 import { ethers } from "hardhat";
 import React, { useState } from "react";
-import converter from "./converter.json";
+import converter from "../artifacts/contracts/converter.sol/converter.json";
+
+const Eth_address = "0x0f3Df9c6b4A16B73707c428ab6d252F5e57Ed61e";
 
 const Body = ({ accounts }) => {
   const [Name, Setname] = useState();
   const [Price, Setprice] = useState();
 
-  const Eth_address = '0x0f3Df9c6b4A16B73707c428ab6d252F5e57Ed61e';
   let EthAmount;
-  let finalUSDT;
-  
   const isConnected = Boolean(accounts[0]);
-  
+
   const changed = (event) => {
     EthAmount = event.target.value;
   };
@@ -24,8 +23,7 @@ const Body = ({ accounts }) => {
         const response = await contract.getETHPrice(EthAmount);
         Setname("The current price of ETH in USDT is :");
         Setprice(response);
-      }
-      catch (err) {
+      } catch (err) {
         console.log("error", err);
       }
     }
@@ -40,11 +38,17 @@ const Body = ({ accounts }) => {
         onChange={changed}
       />
       <br />
-      <button onClick={changer}>Convert</button>
-      <h1>
-        {Name}
-        {Price}
-      </h1>
+      {isConnected ? (
+        <>
+          <button onClick={changer}>Convert</button>
+          <h1>
+            {Name}
+            {Price}
+          </h1>
+        </>
+      ) : (
+        <h2>Please connect to the wallet</h2>
+      )}
     </div>
   );
 };

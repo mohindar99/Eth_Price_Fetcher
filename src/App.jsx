@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Body from "./Body";
 import Navbar from "./Navbar";
@@ -13,5 +13,4 @@ function App() {
     </>
   );
 }
-
 export default App;
